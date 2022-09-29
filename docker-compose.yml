@@ -15,8 +15,10 @@ services:
       - MYSQL_DATABASE=test
       - MYSQL_PASSWORD=P@ssword1
       # ! do not use this in production
-      - MYSQL_ALLOW_EMPTY_PASSWORD
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
     volumes:
       - mysql:/var/lib/mysql
       - mysql_config:/etc/mysql
+      # mapping project files into container
+      - ./:/test
 
